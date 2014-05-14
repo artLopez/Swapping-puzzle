@@ -1,0 +1,365 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.csumb.adc.swapping_puzzle.HardLevel"
+    tools:ignore="MergeRootFrame" >
+    
+	<!-- Linear layout for the image buttons -->
+
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageButton
+            android:id="@+id/ImageButton1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="0" />
+
+        <ImageButton
+            android:id="@+id/ImageButton2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="1" />
+        
+        <ImageButton
+            android:id="@+id/ImageButton3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="2" />
+
+        <ImageButton
+            android:id="@+id/ImageButton4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="3" />
+
+        <ImageButton
+            android:id="@+id/ImageButton5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="4" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageButton
+            android:id="@+id/ImageButton6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="5" />
+
+        <ImageButton
+            android:id="@+id/ImageButton7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="6" />
+
+        <ImageButton
+            android:id="@+id/ImageButton8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="7" />
+
+        <ImageButton
+            android:id="@+id/ImageButton9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="8" />
+
+        <ImageButton
+            android:id="@+id/ImageButton10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="9" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+	<!--  Image button 7 -->
+        <ImageButton
+            android:id="@+id/ImageButton11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="10" />
+	
+        <ImageButton
+            android:id="@+id/ImageButton12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" 
+            android:onClick="swap"
+            android:tag ="11" />
+	<!--  Image button 9 -->
+        <ImageButton
+            android:id="@+id/ImageButton13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="12" />
+
+        <ImageButton
+            android:id="@+id/ImageButton14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="13" />
+
+        <ImageButton
+            android:id="@+id/ImageButton15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="14" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row4"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageButton
+            android:id="@+id/ImageButton16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="15" />
+
+        <ImageButton
+            android:id="@+id/ImageButton17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="16" />
+
+        <ImageButton
+            android:id="@+id/ImageButton18"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="17" />
+
+        <ImageButton
+            android:id="@+id/ImageButton19"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="18" />
+
+        <ImageButton
+            android:id="@+id/ImageButton20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="19" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row5"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <ImageButton
+            android:id="@+id/ImageButton21"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="20" />
+
+        <ImageButton
+            android:id="@+id/ImageButton22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="21" />
+
+        <ImageButton
+            android:id="@+id/ImageButton23"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="22" />
+
+        <ImageButton
+            android:id="@+id/ImageButton24"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="23" />
+
+        <ImageButton
+            android:id="@+id/ImageButton25"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="swap"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:tag="24" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/movesMade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Number of Moves: "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+	<!--  Image button 10 -->
+        <Button
+            android:id="@+id/take"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/take_picture" />
+
+        <Button
+            android:id="@+id/gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/choose_pic" />
+    </LinearLayout>
+
+</LinearLayout>

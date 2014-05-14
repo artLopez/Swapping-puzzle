@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.csumb.adc.swapping_puzzle.EasyLevel"
+    tools:ignore="MergeRootFrame" >
+    
+	<!-- Linear layout for the image buttons -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+	<!--  Image button 1 -->
+        <ImageButton
+            android:id="@+id/ImageButton1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:onClick="swap"
+            android:tag ="0"
+            android:src ="@drawable/ic_launcher" />
+	<!--  Image button 2 -->
+        <ImageButton
+            android:id="@+id/ImageButton2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="1" />
+	<!--  Image button 3 -->
+        <ImageButton
+            android:id="@+id/ImageButton3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+	<!--  Image button 4 -->
+        <ImageButton
+            android:id="@+id/ImageButton4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="3" />
+	<!--  Image button 5 -->
+        <ImageButton
+            android:id="@+id/ImageButton5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="4" />
+	<!--  Image button 6 -->
+        <ImageButton
+            android:id="@+id/ImageButton6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+	<!--  Image button 7 -->
+        <ImageButton
+            android:id="@+id/ImageButton7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="6" />
+	<!--  Image button 8 -->
+        <ImageButton
+            android:id="@+id/ImageButton8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher" 
+            android:onClick="swap"
+            android:tag ="7"/>
+	<!--  Image button 9 -->
+        <ImageButton
+            android:id="@+id/ImageButton9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="0.5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_launcher"
+            android:onClick="swap"
+            android:tag ="8" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/movesMade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Number of Moves: "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+	<!--  Image button 10 -->
+        <Button
+            android:id="@+id/take"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/take_picture" />
+
+        <Button
+            android:id="@+id/gallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/choose_pic" />
+    </LinearLayout>
+
+</LinearLayout>
