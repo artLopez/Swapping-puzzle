@@ -2,6 +2,7 @@ package com.csumb.adc.swapping_puzzle;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -48,6 +49,8 @@ public class EasyLevel extends Activity {
 	int CAMERA_REQUEST = 1;
 	
 	//array of randomized tiles for the puzzle
+	//created a set array so that no original part of the 
+	// image are together
 	int[] indexOfImages = new int[]{7,3,8,6,1,4,2,5,0};
 	//answer key for solved puzzled
 	int[] answerKey = new int[]{0,1,2,3,4,5,6,7,8};
@@ -61,7 +64,7 @@ public class EasyLevel extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_easy_level);
-		
+		savedInstanceState.getInt("NumTiles");
 		//finds the r file location of the imageButtons
 		frame1 = (ImageButton) findViewById(R.id.ImageButton1);//reference to my image view in xml
 		frame2 = (ImageButton) findViewById(R.id.ImageButton2);
@@ -110,8 +113,6 @@ public class EasyLevel extends Activity {
 				startActivityForResult(inB, GALLERY_REQUEST);
 			}
 		});
-		    
-
 	}
 	//swaps the tiles after two are pressed 
 	public void swap(View v)
@@ -175,9 +176,26 @@ public class EasyLevel extends Activity {
 		// TODO Auto-generated method stub
 		//this will capture the image after it has been taken
 		super.onActivityResult(requestCode, resultCode, data);
-		//gathers picture from camera
-		if(requestCode == CAMERA_REQUEST)
-	    	bm = (Bitmap) data.getExtras().get("data");
+		//gathers picture from camera		
+		if(requestCode == CAMERA_REQUEST){
+			if(resultCode != RESULT_CANCELED){
+				if (resultCode == RESULT_OK){
+					try {
+						//data.getData() produces an object of type Uri, this Uri is used with a content resolver
+						//to return the Bitmap from the Camera. 
+						bm = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
+						
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		
 		//recevies the selected picture from the gallery
 	    else
 	    {
@@ -200,18 +218,27 @@ public class EasyLevel extends Activity {
 		//sets up an array of 9 for the bitmaps images
 		 bmp = new Bitmap[9];
 		 
-		 //cropped the images for the grid view of the puzzle
-		 bmp[0] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),0,0,60,60);
-		 bmp[1] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),60,0,60,60);
-		 bmp[2] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),120,0,60,60);
-		 bmp[3] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),0,60,60,60);
-		 bmp[4] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),60,60,60,60);
-		 bmp[5] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),120,60,60,60);
-		 bmp[6] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),0,120,60,60);
-		 bmp[7] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),60,120,60,60);
-		 bmp[8] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),120,120,60,60);
-		 //sets the new images on screen		 
+		 int width = bm.getWidth() / 3;
+		 int height = bm.getHeight() / 3;
+		 
+		 int tempWidth = 0;
+		 int tempHeight = 0;
+		 
+		 for(int x = 1;x < 10;x++)
+		 {
+			 bmp[x - 1] = Bitmap.createBitmap(bm,tempWidth, tempHeight,width,height);
+			 tempWidth += width;
+			if(x % 3 == 0)
+			{
+				tempWidth = 0;
+				tempHeight += height;
+			}
+			
+		 }
+		
+		 //sets the new images on screen	 
 		 setImageBitMap();
+	
 	}	
 	//sets the images on the screens
 	public void setImageBitMap()

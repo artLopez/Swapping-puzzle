@@ -92,7 +92,7 @@ public class MediumLevel extends Activity {
 		@Override
 			public void onClick(View v) {//after button is clicked i need to launched my camera
 				Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);//i have made an intent of the launching of my camera so that i can use it when ever i need it again
-		
+			
 				if(intent.resolveActivity(getPackageManager())!= null){
 					startActivityForResult(intent, CAMERA_REQUEST);//starting camera activity that will return a result after it starts
 				}
@@ -195,7 +195,6 @@ public class MediumLevel extends Activity {
 	    }
 		//sets up a array for the bitmaps images
 		 bmp = new Bitmap[16];
-		 
 		 
 		 bmp[0] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),0,0,45,45);
 		 bmp[1] = Bitmap.createBitmap(Bitmap.createScaledBitmap(bm,180, 180, true),45,0,45,45);
